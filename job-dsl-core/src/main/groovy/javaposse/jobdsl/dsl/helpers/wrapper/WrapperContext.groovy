@@ -99,7 +99,7 @@ class WrapperContext implements Context {
      *
      * Generates XML:
      * <ruby-proxy-object>
-     *   <ruby-object ruby-class="Jenkins::Plugin::Proxies::BuildWrapper" pluginid="rvm">
+     *   <ruby-object ruby-class="Jenkins::Tasks::BuildWrapperProxy" pluginid="rvm">
      *     <pluginid pluginid="rvm" ruby-class="String">rvm</pluginid>
      *     <object ruby-class="RvmWrapper" pluginid="rvm">
      *       <impl pluginid="rvm" ruby-class="String">ruby-1.9.2-p290</impl>
@@ -111,7 +111,7 @@ class WrapperContext implements Context {
         Preconditions.checkArgument(rubySpecification as Boolean, 'Please specify at least the ruby version')
         NodeBuilder nodeBuilder = new NodeBuilder()
         wrapperNodes << nodeBuilder.'ruby-proxy-object' {
-            'ruby-object'('ruby-class': 'Jenkins::Plugin::Proxies::BuildWrapper', pluginid: 'rvm') {
+            'ruby-object'('ruby-class': 'Jenkins::Tasks::BuildWrapperProxy', pluginid: 'rvm') {
 
                 pluginid('rvm', [pluginid: 'rvm', 'ruby-class': 'String'])
                 object('ruby-class': 'RvmWrapper', pluginid: 'rvm') {
